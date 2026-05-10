@@ -401,12 +401,15 @@ h2 span { color: var(--cyan); }
 .why-item p { font-size: 14px; color: #c2d8f0; line-height: 1.72; }
 
 /* ─── AREAS ─── */
-#areas { background: var(--bg-2); }
+#areas { background: var(--bg-2); padding: 36px 5%; }
+#areas .divider { margin-top: 10px; margin-bottom: 20px; }
 
 .areas-inner {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
+  gap: 48px; align-items: start;
 }
+.areas-desc { padding-top: 0; }
+.map-visual { margin-top: 0; }
 .areas-desc p { font-size: 15.5px; color: var(--silver); line-height: 1.8; margin-bottom: 32px; }
 
 .area-tags { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -562,7 +565,7 @@ footer p span { color: var(--cyan); }
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1000px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-terminal { display: none; }
+  .hero-terminal { display: block; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .services-grid .service-card:nth-child(7) { grid-column: auto; }
   .why-grid { grid-template-columns: 1fr; }
@@ -739,19 +742,12 @@ footer p span { color: var(--cyan); }
 <!-- COVERAGE AREAS -->
 <section id="areas">
   <div class="section-inner">
-    <span class="s-tag">// where I work</span>
-    <h2>Coverage <span>Areas</span></h2>
-    <div class="divider"></div>
     <div class="areas-inner">
       <div class="areas-desc">
+        <span class="s-tag">// where I work</span>
+        <h2>Coverage <span>Areas</span></h2>
+        <div class="divider"></div>
         <p>I provide on-site and remote IT support across Ammanford, Swansea and the wider South Wales region including Llanelli and Carmarthenshire. Not sure if I cover your area? Get in touch and I'll do my best to help.</p>
-        <div class="area-tags">
-          <span class="area-tag">📍 Ammanford</span>
-          <span class="area-tag">📍 Swansea</span>
-          <span class="area-tag">📍 Llanelli</span>
-          <span class="area-tag">📍 Carmarthenshire</span>
-          <span class="area-tag">📍 South Wales</span>
-        </div>
       </div>
       <div class="map-visual reveal">
         <div class="map-canvas">
@@ -862,17 +858,19 @@ function makeLabel(text) {
   return L.divIcon({
     className: '',
     html: `<div style="
+      display:inline-block;
       font-family:'JetBrains Mono',monospace;
       font-size:10px; font-weight:500;
       color:${GREEN};
       background:${GREEN_BG};
       border:1px solid ${GREEN_BDR};
-      padding:3px 8px; border-radius:4px;
+      padding:3px 10px; border-radius:4px;
       white-space:nowrap; letter-spacing:0.04em;
       pointer-events:none;
+      backdrop-filter:blur(4px);
     ">${text}</div>`,
     iconSize: [0, 0],
-    iconAnchor: [-6, -18]
+    iconAnchor: [-10, 5]
   });
 }
 
