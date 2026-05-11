@@ -82,13 +82,13 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
 .nav-logo-mark {
-  width: 38px; height: 38px; border-radius: 9px;
+  width: 38px; height: 38px; border-radius: 50%;
   border: 1.5px solid var(--cyan);
   box-shadow: 0 0 16px var(--cyan-glow), inset 0 0 12px rgba(0,200,255,0.05);
   display: flex; align-items: center; justify-content: center;
-  background: var(--bg-3); overflow: hidden;
+  background: transparent; overflow: hidden;
 }
-.nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; border-radius: 7px; }
+.nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .nav-logo-mark .fallback {
   font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px;
   color: var(--cyan); display: none;
@@ -301,7 +301,7 @@ nav {
   80%     { transform: translateX(1px); }
 }
 /* warning badge pulse */
- @keyframes warnPulse {
+@keyframes warnPulse {
   0%,100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(251,191,36,0.4)); }
   50%     { transform: scale(1.08); filter: drop-shadow(0 0 12px rgba(251,191,36,0.9)); }
 }
